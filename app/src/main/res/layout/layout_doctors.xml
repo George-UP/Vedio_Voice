@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageButton
+        android:id="@+id/layout_doctors_button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bn_selector9"
+        android:scaleType="centerInside"
+        android:src="@drawable/sample_doctor" />
+
+    <TextView
+        android:id="@+id/layout_doctors_text1"
+        android:layout_width="194dp"
+        android:layout_height="54dp"
+        android:layout_alignLeft="@id/layout_doctors_button1"
+        android:layout_alignRight="@+id/layout_doctors_button1"
+        android:layout_alignBottom="@+id/layout_doctors_button1"
+        android:gravity="bottom"
+        android:text="某医生\n什么什么主任\n什么什么导师"
+        android:textAlignment="center"
+        android:textColor="@color/White"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.033"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+</RelativeLayout>
