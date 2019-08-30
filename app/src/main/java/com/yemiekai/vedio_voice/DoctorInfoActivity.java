@@ -47,14 +47,15 @@ public class DoctorInfoActivity extends AppCompatActivity {
             setInfo.start();
             setInfo.join();
 
-            Thread setImage = SetImageView();
-            setImage.start();
-            setImage.join();
+//            Thread setImage = SetImageView();
+//            setImage.start();
+//            setImage.join();
 
 
         }catch (InterruptedException error){
             error.printStackTrace();
         }
+        SetImageView();
 
     }
 
@@ -87,7 +88,8 @@ public class DoctorInfoActivity extends AppCompatActivity {
                         String res = response.toString();
                         try {
                             Gson gson = new Gson();
-                            doctorInfo = gson.fromJson(res,DoctorInfo.class);
+                            //doctorInfo = gson.fromJson(res,DoctorInfo.DoctorBean.class);
+                            doctorInfo = new Gson().fromJson(res, DoctorInfo.class);
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
@@ -112,49 +114,46 @@ public class DoctorInfoActivity extends AppCompatActivity {
 
 
 
-    private Thread SetImageView(){
-        return new Thread(){
-            @Override
-            public void run(){
-                if (doctorInfo.getAvatarUrl()!= null) {
-                    String urlCheck = doctorInfo.getAvatarUrl();
-                    urlCheck = urlCheck.replace('\\', '/');
-                    String url = BaseIP + urlCheck;
-                    RequestOptions options = new RequestOptions()
-                            .override(174,255)
-                            .fitCenter();
-                    Glide.with(imageView)
-                            .load(url)
-                            .apply(options);
-
-                }
-                else
-                    imageView.setImageResource(R.drawable.sample_doctor);
-            }
-        };
+    private void SetImageView(){
+        DoctorInfo.DoctorBean doctor = doctorInfo.getDoctor().get(0);
+        if (doctor.getAvatarUrl()!= null) {
+            String urlCheck = doctor.getAvatarUrl();
+            urlCheck = urlCheck.replace('\\', '/');
+            String url = BaseIP + urlCheck;
+            RequestOptions options = new RequestOptions()
+                    .override(174,255)
+                    .fitCenter();
+            Glide.with(this).load(url).apply(options).into(imageView);
+//            Glide.with(imageView)
+//                    .load(url)
+//                    .apply(options);
+        }
+        else
+            imageView.setImageResource(R.drawable.sample_doctor);
     }
+
 
     private Thread SetInfo(){
         return new Thread(){
             @Override
             public void run(){
-                String name = doctorInfo.getName();
-                int sex = doctorInfo.getGender();
+                DoctorInfo.DoctorBean doctor = doctorInfo.getDoctor().get(0);
+                String name = doctor.getName();
+                int sex = doctor.getGender();
                 String gender = null;
                 if (sex == 1)
                     gender = "男";
                 else
                     gender = "女";
-                String post = doctorInfo.getPost();
-                String title = doctorInfo.getTitle();
+                String post = doctor.getPost();
+                String title = doctor.getTitle();
                 String text = "姓名：" + name + "\r\n"
                             + "性别：" + gender + "\r\n"
                             + "职务：" + post + "\r\n"
                             + "职称：" + title;
                 intro.setText(text);
 
-                String resume = "个人简历" + doctorInfo.getResume();
-
+                String resume = "个人简历" + doctor.getResume();
 
             }
         };

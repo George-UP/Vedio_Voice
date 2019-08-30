@@ -1,17 +1,13 @@
 package com.yemiekai.vedio_voice;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.ExpandableListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.gson.Gson;
 import com.yemiekai.vedio_voice.fragments.DoctorListFragment;
-import com.yemiekai.vedio_voice.utils.datas.AllDoctorsPreview;
 
 import org.json.JSONArray;
 import org.json.JSONObject;

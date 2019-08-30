@@ -3,9 +3,23 @@ package com.yemiekai.vedio_voice.utils.datas;
 import java.util.List;
 
 public class DoctorInfo {
+
+
+    private List<DoctorBean> doctor;
+
+    public List<DoctorBean> getDoctor() {
+        return doctor;
+    }
+
+    public void setDoctor(List<DoctorBean> doctor) {
+        this.doctor = doctor;
+    }
+
+    public static class DoctorBean {
         /**
          * id : 1
          * name : 曾康华
+         * avatarUrl : \public\image\doctor\face\doctor1.jpg
          * gender : 2
          * post : 副院长
          * title : 主任医师 、教授
@@ -14,11 +28,12 @@ public class DoctorInfo {
          * achievement : 完成省市级课题多项，多项成果获市科技进步奖。
          * speciality : 在冠心病、高血压、心衰的诊断治疗上积累了丰富经验，率先在市级医院开展心脏康复，创建赣州市人民医院心脏康复亚专业。
          * secondOfficeId : 1
-         * workInformations : [{"id":"1","department":"心血管内一科门诊（南院）","registerType":"正高号","date":null,"classes":"上午","remaining":20,"doctorId":"1"},{"id":"2","department":"心血管内一科门诊（南院）","registerType":"正高号","date":null,"classes":"下午","remaining":19,"doctorId":"1"}]
-         * avatarUrl : \public\image\doctor\face
-         4840185326.jpg
+         * workInformations : [{"id":"1","department":"心血管内一科门诊（南院）","registerType":"正高号","date":"2019-08-26T00:36:05.000Z","classes":"上午","remaining":20,"doctorId":"1"},{"id":"2","department":"心血管内一科门诊（南院）","registerType":"正高号","date":"2019-08-26T00:36:09.000Z","classes":"下午","remaining":19,"doctorId":"1"}]
          */
+
+        private String id;
         private String name;
+        private String avatarUrl;
         private int gender;
         private String post;
         private String title;
@@ -26,8 +41,16 @@ public class DoctorInfo {
         private String concurrent;
         private String achievement;
         private String speciality;
-        private String avatarUrl;
+        private String secondOfficeId;
         private List<WorkInformationsBean> workInformations;
+
+        public String getId() {
+            return id;
+        }
+
+        public void setId(String id) {
+            this.id = id;
+        }
 
         public String getName() {
             return name;
@@ -35,6 +58,14 @@ public class DoctorInfo {
 
         public void setName(String name) {
             this.name = name;
+        }
+
+        public String getAvatarUrl() {
+            return avatarUrl;
+        }
+
+        public void setAvatarUrl(String avatarUrl) {
+            this.avatarUrl = avatarUrl;
         }
 
         public int getGender() {
@@ -93,12 +124,12 @@ public class DoctorInfo {
             this.speciality = speciality;
         }
 
-        public String getAvatarUrl() {
-            return avatarUrl;
+        public String getSecondOfficeId() {
+            return secondOfficeId;
         }
 
-        public void setAvatarUrl(String avatarUrl) {
-            this.avatarUrl = avatarUrl;
+        public void setSecondOfficeId(String secondOfficeId) {
+            this.secondOfficeId = secondOfficeId;
         }
 
         public List<WorkInformationsBean> getWorkInformations() {
@@ -114,18 +145,27 @@ public class DoctorInfo {
              * id : 1
              * department : 心血管内一科门诊（南院）
              * registerType : 正高号
-             * date : null
+             * date : 2019-08-26T00:36:05.000Z
              * classes : 上午
              * remaining : 20
              * doctorId : 1
              */
 
+            private String id;
             private String department;
             private String registerType;
-            private Object date;
+            private String date;
             private String classes;
             private int remaining;
             private String doctorId;
+
+            public String getId() {
+                return id;
+            }
+
+            public void setId(String id) {
+                this.id = id;
+            }
 
             public String getDepartment() {
                 return department;
@@ -143,11 +183,11 @@ public class DoctorInfo {
                 this.registerType = registerType;
             }
 
-            public Object getDate() {
+            public String getDate() {
                 return date;
             }
 
-            public void setDate(Object date) {
+            public void setDate(String date) {
                 this.date = date;
             }
 
@@ -175,5 +215,5 @@ public class DoctorInfo {
                 this.doctorId = doctorId;
             }
         }
-
+    }
 }
