@@ -23,22 +23,42 @@ public class DoctorInfoActivity extends AppCompatActivity {
 
     String BaseIP = "http://123.207.108.39:7001";
     DoctorInfo doctorInfo = new DoctorInfo();
-    ImageView imageView = (ImageView) findViewById(R.id.Profile_photo);
-    TextView intro = (TextView) findViewById(R.id.Intro);
-    TextView detailInfo = (TextView) findViewById(R.id.DetailInfo);
+    ImageView imageView ;
+    TextView intro ;
+    TextView detailInfo ;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctor_info);
         Intent intent = getIntent();
-        String DoctorID = intent.getStringExtra("DoctorID");
-        GetDoctorInfro(DoctorID);
-        SetImageView();
+        String DoctorId = intent.getStringExtra("DoctorId");
+        imageView = findViewById(R.id.Profile_photo);
+        intro = findViewById(R.id.Intro);
+        detailInfo = findViewById(R.id.DetailInfo);
+
+        try {
+            Thread getDoctorInfo = GetDoctorInfo(DoctorId);
+            getDoctorInfo.start();
+            getDoctorInfo.join();
+
+            Thread setInfo = SetInfo();
+            setInfo.start();
+            setInfo.join();
+
+            Thread setImage = SetImageView();
+            setImage.start();
+            setImage.join();
+
+
+        }catch (InterruptedException error){
+            error.printStackTrace();
+        }
 
     }
 
-    private Thread GetDoctorInfro(final String DoctorID){
+    private Thread GetDoctorInfo(final String DoctorID){
         return new Thread(){
             @Override
             public void run(){
@@ -53,8 +73,8 @@ public class DoctorInfoActivity extends AppCompatActivity {
                     //设置链接属性
                     conn.setRequestMethod("GET");//设置请求方法
                     conn.setReadTimeout(5000);//设置超时时间
-                    int getnum = conn.getResponseCode();
-                    if (getnum == 200) { //获取状态码 200表示连接成功
+                    int getNum = conn.getResponseCode();
+                    if (getNum == 200) { //获取状态码 200表示连接成功
                         //获取输入流
                         InputStream in = conn.getInputStream();
                         //读取输入流
@@ -90,22 +110,30 @@ public class DoctorInfoActivity extends AppCompatActivity {
         };
     }
 
-    private void SetImageView(){
-        if (doctorInfo.getAvatarUrl()!= null) {
-            String urlcheck = doctorInfo.getAvatarUrl().toString();
-            urlcheck = urlcheck.replace('\\', '/');
-            String url = BaseIP + urlcheck;
-            RequestOptions options = new RequestOptions()
-                    .override(174,255)
-                    .fitCenter();
-            Glide.with(this)
-                    .load(url)
-                    .apply(options)
-                    .into(imageView);//设置按钮图片
-        }
-        else
-            imageView.setImageResource(R.drawable.sample_doctor);
+
+
+    private Thread SetImageView(){
+        return new Thread(){
+            @Override
+            public void run(){
+                if (doctorInfo.getAvatarUrl()!= null) {
+                    String urlCheck = doctorInfo.getAvatarUrl();
+                    urlCheck = urlCheck.replace('\\', '/');
+                    String url = BaseIP + urlCheck;
+                    RequestOptions options = new RequestOptions()
+                            .override(174,255)
+                            .fitCenter();
+                    Glide.with(imageView)
+                            .load(url)
+                            .apply(options);
+
+                }
+                else
+                    imageView.setImageResource(R.drawable.sample_doctor);
+            }
+        };
     }
+
     private Thread SetInfo(){
         return new Thread(){
             @Override
