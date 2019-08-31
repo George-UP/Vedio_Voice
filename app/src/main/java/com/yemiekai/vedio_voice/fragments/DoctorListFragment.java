@@ -20,7 +20,7 @@ import com.bumptech.glide.request.RequestOptions;
 import com.google.gson.Gson;
 import com.yemiekai.vedio_voice.DoctorInfoActivity;
 import com.yemiekai.vedio_voice.R;
-import com.yemiekai.vedio_voice.utils.datas.AllDoctorsPreview;
+import com.yemiekai.vedio_voice.utils.datas.Doctor.AllDoctorsPreview;
 
 import java.util.ArrayList;
 

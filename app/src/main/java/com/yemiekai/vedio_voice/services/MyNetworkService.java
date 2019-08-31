@@ -11,11 +11,9 @@ import android.os.RemoteException;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.yemiekai.vedio_voice.utils.datas.Doctor_gson;
-import com.yemiekai.vedio_voice.utils.datas.Doctor_p;
+import com.yemiekai.vedio_voice.utils.datas.Doctor.Doctor_gson;
+import com.yemiekai.vedio_voice.utils.datas.Doctor.Doctor_p;
 import com.yemiekai.vedio_voice.utils.tools.HttpUtil;
-
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;

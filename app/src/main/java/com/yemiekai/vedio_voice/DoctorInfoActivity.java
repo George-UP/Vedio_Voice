@@ -10,7 +10,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.google.gson.Gson;
-import com.yemiekai.vedio_voice.utils.datas.DoctorInfo;
+import com.yemiekai.vedio_voice.utils.datas.Doctor.DoctorInfo;
 
 import java.io.BufferedReader;
 import java.io.IOException;

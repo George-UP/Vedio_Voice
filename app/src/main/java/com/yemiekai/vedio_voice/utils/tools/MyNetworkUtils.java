@@ -13,7 +13,7 @@ import android.os.Messenger;
 import android.os.RemoteException;
 
 import com.yemiekai.vedio_voice.services.MyNetworkService;
-import com.yemiekai.vedio_voice.utils.datas.Doctor_p;
+import com.yemiekai.vedio_voice.utils.datas.Doctor.Doctor_p;
 
 import java.util.ArrayList;
 
