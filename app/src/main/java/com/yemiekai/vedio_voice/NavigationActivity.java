@@ -17,12 +17,12 @@ import com.yemiekai.vedio_voice.utils.datas.Navigation.NavigationListFragment;
 public class NavigationActivity extends BasicActivity {
 
     private ExpandableListView listView;  // 界面左边的科室列表
-    private String[] mGroups = {"A楼", "B楼", "C楼", "D楼"};
+    private String[] mGroups = {"总揽图","A楼", "B楼", "C楼", "D楼"};
     private String[][] mChilds = {
-            {"1F", "2F", "3F", "4F", "5F", "6F"},
-            {"1F", "2F", "3F", "4F", "5F", "6F"},
-            {"1F", "2F", "3F", "4F", "5F", "6F"},
-            {"1F", "2F", "3F", "4F", "5F", "6F"}
+            {"总揽图","1F", "2F", "3F", "4F", "5F", "6F"},
+            {"总揽图","1F", "2F", "3F", "4F", "5F", "6F"},
+            {"总揽图","1F", "2F", "3F", "4F", "5F", "6F"},
+            {"总揽图","1F", "2F", "3F", "4F", "5F", "6F"}
     };
 
     @Override

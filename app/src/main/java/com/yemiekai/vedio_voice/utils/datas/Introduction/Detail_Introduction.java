@@ -4,8 +4,9 @@ import java.util.List;
 
 //医院介绍————详细
 public class Detail_Introduction {
+
     /**
-     * res : {"id":"1","message":"医院","description":"赣州市人民医院始建于1939年7月，位于有着千年宋城美誉的赣州中心城区，现已形成\u201c一院两区\u201d格局，集医疗、教学、科研、保健、康复于一体，是南昌大学附属医院，国家支持的区域性医疗中心，江西省首家第三周期三级甲等综合医院，赣州市规模最大、技术力量最雄厚、医疗设备和管理及服务理念最先进的现代化医院。在江西省推行的DRGs综合评价排名中，取得了综合服务能力全省第三、地市级医院第一的优异成绩，牢固确立了在全省地市级医院中的领军地位。","introducePhotos":[{"id":"6681ff30c79911e99b845b23dde801b5","photoUrl":"\\public\\image\\hosptial\\message\\hospital1.jpg","introductionId":"1"},{"id":"668337b0c79911e99b845b23dde801b5","photoUrl":"\\public\\image\\hosptial\\message\\hospital2.jpg","introductionId":"1"}]}
+     * res : {"id":"1","message":"医院","description":"赣州市人民医院始建于1939年7月，位于有着千年宋城美誉的赣州中心城区，现已形成\u201c一院两区\u201d格局，集医疗、教学、科研、保健、康复于一体，是南昌大学附属医院，国家支持的区域性医疗中心，江西省首家第三周期三级甲等综合医院，赣州市规模最大、技术力量最雄厚、医疗设备和管理及服务理念最先进的现代化医院。在江西省推行的DRGs综合评价排名中，取得了综合服务能力全省第三、地市级医院第一的优异成绩，牢固确立了在全省地市级医院中的领军地位。","introducePhotos":[{"id":"4f124770ccac11e9bd775b558181f131","photoUrl":"\\public\\image\\hosptial\\message\\hospital1.jpg","introductionId":"1"},{"id":"4f1358e0ccac11e9bd775b558181f131","photoUrl":"\\public\\image\\hosptial\\message\\hospital2.jpg","introductionId":"1"}]}
      */
 
     private ResBean res;
@@ -23,7 +24,7 @@ public class Detail_Introduction {
          * id : 1
          * message : 医院
          * description : 赣州市人民医院始建于1939年7月，位于有着千年宋城美誉的赣州中心城区，现已形成“一院两区”格局，集医疗、教学、科研、保健、康复于一体，是南昌大学附属医院，国家支持的区域性医疗中心，江西省首家第三周期三级甲等综合医院，赣州市规模最大、技术力量最雄厚、医疗设备和管理及服务理念最先进的现代化医院。在江西省推行的DRGs综合评价排名中，取得了综合服务能力全省第三、地市级医院第一的优异成绩，牢固确立了在全省地市级医院中的领军地位。
-         * introducePhotos : [{"id":"6681ff30c79911e99b845b23dde801b5","photoUrl":"\\public\\image\\hosptial\\message\\hospital1.jpg","introductionId":"1"},{"id":"668337b0c79911e99b845b23dde801b5","photoUrl":"\\public\\image\\hosptial\\message\\hospital2.jpg","introductionId":"1"}]
+         * introducePhotos : [{"id":"4f124770ccac11e9bd775b558181f131","photoUrl":"\\public\\image\\hosptial\\message\\hospital1.jpg","introductionId":"1"},{"id":"4f1358e0ccac11e9bd775b558181f131","photoUrl":"\\public\\image\\hosptial\\message\\hospital2.jpg","introductionId":"1"}]
          */
 
         private String id;
@@ -65,7 +66,7 @@ public class Detail_Introduction {
 
         public static class IntroducePhotosBean {
             /**
-             * id : 6681ff30c79911e99b845b23dde801b5
+             * id : 4f124770ccac11e9bd775b558181f131
              * photoUrl : \public\image\hosptial\message\hospital1.jpg
              * introductionId : 1
              */
