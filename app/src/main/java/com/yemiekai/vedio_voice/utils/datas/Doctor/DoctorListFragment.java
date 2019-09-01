@@ -1,4 +1,4 @@
-package com.yemiekai.vedio_voice.fragments;
+package com.yemiekai.vedio_voice.utils.datas.Doctor;
 
 import android.app.Fragment;
 import android.content.Intent;

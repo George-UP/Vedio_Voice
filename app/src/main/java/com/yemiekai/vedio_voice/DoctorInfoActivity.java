@@ -138,22 +138,25 @@ public class DoctorInfoActivity extends AppCompatActivity {
             @Override
             public void run(){
                 DoctorInfo.DoctorBean doctor = doctorInfo.getDoctor().get(0);
-                String name = doctor.getName();
+                String name = "  姓名：" + doctor.getName() + "\r\n";
                 int sex = doctor.getGender();
-                String gender = null;
+                String gender = "  性别：";
                 if (sex == 1)
-                    gender = "男";
+                    gender += "男";
                 else
-                    gender = "女";
-                String post = doctor.getPost();
-                String title = doctor.getTitle();
-                String text = "姓名：" + name + "\r\n"
-                            + "性别：" + gender + "\r\n"
-                            + "职务：" + post + "\r\n"
-                            + "职称：" + title;
+                    gender += "女";
+                String post = "  职务：" + doctor.getPost() + "\r\n";
+                String title = "  职称：" + doctor.getTitle() + "\r\n";
+                String text = name + gender + "\r\n" + post + title;
                 intro.setText(text);
 
-                String resume = "个人简历" + doctor.getResume();
+                String resume = "个人简历：" + doctor.getResume() + "\r\n";
+                String concurrent = "医生兼职：" + doctor.getConcurrent() + "\r\n";
+                String achievement = "学术成果：" + doctor.getAchievement() + "\r\n";
+                String speciality = "医生专业特长：" + doctor.getSpeciality() + "\r\n";
+                text = resume + concurrent + achievement + speciality;
+                detailInfo.setText(text);
+
 
             }
         };

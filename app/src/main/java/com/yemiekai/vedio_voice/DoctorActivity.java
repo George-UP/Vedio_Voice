@@ -7,7 +7,7 @@ import android.widget.BaseExpandableListAdapter;
 import android.widget.ExpandableListView;
 import android.widget.TextView;
 
-import com.yemiekai.vedio_voice.fragments.DoctorListFragment;
+import com.yemiekai.vedio_voice.utils.datas.Doctor.DoctorListFragment;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -385,4 +385,5 @@ public class DoctorActivity extends BasicActivity {
             return true;
         }
     }
+
 }
