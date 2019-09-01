@@ -67,8 +67,6 @@ public class IntroductionListFragment extends Fragment {
                         .into(imageView);//设置按钮图片
             }
         }
-
-
         return rootView;
     }
 

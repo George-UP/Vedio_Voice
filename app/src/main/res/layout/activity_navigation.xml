@@ -8,11 +8,10 @@
 
     <ExpandableListView
         android:id="@+id/navigation_category_list"
-        android:layout_width="0dp"
+        android:layout_width="56dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:background="@color/Blue1">
-    </ExpandableListView>
+        android:background="@color/Blue1"></ExpandableListView>
 
     <FrameLayout
         android:id="@+id/navigation_detail_container"

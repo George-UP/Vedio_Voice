@@ -3,6 +3,7 @@ package com.yemiekai.vedio_voice.utils.datas.Navigation;
 import java.util.List;
 
 public class NavigationAll {
+
     /**
      * res : {"count":3,"rows":[{"id":"4cbdd020ccac11e9bd775b558181f131","name":"医院总览图"},{"id":"1","name":"门诊楼"},{"id":"4f16db50ccac11e9bd775b558181f131","name":"急诊楼"}]}
      */
